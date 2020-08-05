@@ -32,7 +32,7 @@ export class RegistrarComponent implements OnInit {
          Swal.fire("Error al registrar el usuario", "Intente nuevamente.", 'error');
         },
       () => {
-          Swal.fire("BAUFEST", "Usuario registrado correctamente", 'success');
+          Swal.fire("WERBEN", "Usuario registrado correctamente", 'success');
         });
  
      }
