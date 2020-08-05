@@ -1,0 +1,126 @@
+<main class="d-flex align-items-center min-vh-100 py-3 py-md-0  pl-4 pr-4" style="width: 100%;">
+    <div class="card login-card" style="width: 100%;">
+        <div class="row no-gutters">
+          <div class="col-md-3">
+            <img src="../../../assets/img/taxi.jpg" alt="login" class="login-card-img">
+          </div>
+          <div class="col-md-9 col-lg-9">
+            <div class="card-body pt-0 mt-2 pb-0 mb-0" >
+              <div class="brand-wrapper"> 
+                    <p class="login-card-description pt-2"><img src="../../../assets/img/baufest.jpg" class="img-fluid" style="max-width: 300px;"></p>
+              </div>
+              <p class="login-card-description mt-0 mb-0 pb-2">Registro de usuario</p>
+             
+              <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+
+               
+                <div class="row pl-3 pr-3 pt-2">
+                    <div class="col-12 col-lg-8">
+                        <div class="row pr-3">
+                            <label for="nombre" class="pb-0 mb-0" style="font-size: calc(.8em + 0.5vw);color:#3b3b3c;">nombre</label>
+                            <input type="text" class="form-control pb-0 mb-0 pt-0 mt-0" name="nombre" [(ngModel)]="model.nombre" #nombre="ngModel" [ngClass]="{ 'is-invalid': f.submitted && nombre.invalid }" required minlength="3" required>
+                            <div *ngIf="f.submitted && nombre.invalid" class="invalid-feedback">
+                                <div *ngIf="nombre.errors.required">Se requiere un nombre valido.</div>
+                                <div *ngIf="nombre.errors.minlength">El nombre debe contener al menos 3 caracteres.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4"></div>
+                </div>    
+
+                <div class="row pl-3 pr-3">
+                    <div class="col-12 col-lg-2">
+                        <div class="row  pr-3">
+                            <label for="edad" class="pb-0 mb-0  pt-2" style="font-size: calc(.8em + 0.5vw);color:#3b3b3c;">edad</label>
+                            <input type="text" class="form-control pb-0 mb-0  pt-0 mt-0" name="edad" [(ngModel)]="model.edad" #edad="ngModel" [ngClass]="{ 'is-invalid': f.submitted && edad.invalid }" required  required>
+                            <div *ngIf="f.submitted && edad.invalid" class="invalid-feedback">
+                                <div *ngIf="edad.errors.required">Ingrese su edad.</div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="row  pr-3">
+                            <label for="telefono" class="pb-0 mb-0  pt-2" style="font-size: calc(.8em + 0.5vw);color:#3b3b3c;">teléfono</label>
+                            <input type="text" class="form-control pb-0 mb-0  pt-0 mt-0" name="telefono" [(ngModel)]="model.telefono" #telefono="ngModel" [ngClass]="{ 'is-invalid': f.submitted && telefono.invalid }" required minlength="6" required>
+                            <div *ngIf="f.submitted && telefono.invalid" class="invalid-feedback">
+                                <div *ngIf="telefono.errors.required">Se requiere ingresar un teléfono.</div>
+                                <div *ngIf="telefono.errors.minlength">El teléfono debe contener al menos 6 caracteres.</div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-12 col-lg-6"></div>
+                </div>
+
+
+                <div class="row pl-3 pr-3 pt-2">
+                    <div class="col-12 col-lg-8">
+                        <div class="row pr-3">
+                            <label for="email" class="pb-0 mb-0" style="font-size: calc(.8em + 0.5vw);color:#3b3b3c;">email</label>
+                            <input type="text" class="form-control pb-0 mb-0 pt-0 mt-0" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required minlength="3" required>
+                            <div *ngIf="f.submitted && nombre.invalid" class="invalid-feedback">
+                                <div *ngIf="email.errors.required">Se requiere un email valido.</div>
+                                <div *ngIf="email.errors.minlength">El email debe contener al menos 3 caracteres.</div>
+                            </div>
+                        </div>                    </div>
+                    <div class="col-12 col-lg-4"></div>
+                </div> 
+
+
+
+
+                <div class="row pl-3 pr-3">
+                    <div class="col-12 col-lg-3 ">
+                        <div class="row pr-3">
+                            <label for="patente" class="pb-0 mb-0  pt-2" style="font-size: calc(.8em + 0.5vw);color:#3b3b3c;">patente</label>
+                            <input type="text" class="form-control pb-0 mb-0  pt-0 mt-0" name="patente" [(ngModel)]="model.patente" #patente="ngModel" [ngClass]="{ 'is-invalid': f.submitted && patente.invalid }" required>
+                            <div *ngIf="f.submitted && patente.invalid" class="invalid-feedback">
+                                <div *ngIf="patente.errors.required">Se requiere una patente valida.</div>
+                            </div>
+                        </div>    
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="row  pr-3 ">
+                            <label for="modelo" class="pb-0 mb-0 pt-2" style="font-size: calc(.8em + 0.5vw);color:#3b3b3c;">modelo</label>
+                            <input type="text" class="form-control pb-0 mb-0  pt-0 mt-0" name="modelo" [(ngModel)]="model.modelo" #modelo="ngModel" [ngClass]="{ 'is-invalid': f.submitted && modelo.invalid }" required>
+                            <div *ngIf="f.submitted && modelo.invalid" class="invalid-feedback">
+                                <div *ngIf="modelo.errors.required">Se requiere ingresar un modelo valido.</div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-12 col-lg-3">
+                        <div class="row  pr-3">
+                            <label for="anio" class="pb-0 mb-0  pt-2" style="font-size: calc(.8em + 0.5vw);color:#3b3b3c;">año</label>
+                            <input type="text" class="form-control pb-0 mb-0  pt-0 mt-0" name="anio" [(ngModel)]="model.anio" #anio="ngModel" [ngClass]="{ 'is-invalid': f.submitted && anio.invalid }" required>
+                            <div *ngIf="f.submitted && anio.invalid" class="invalid-feedback">
+                                <div *ngIf="anio.errors.required">Se requiere ingresar un anio.</div>
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="col-12 col-lg-3"></div>    
+                </div>
+
+
+                <div class="row mt-4">
+                  <div class="col-12 col-lg-6">
+                    <div class="form-group">
+                        <button class="btn btn-dark btn-lg btn-block mb-4 mt-4" style="width: 97%;">registrar el usuario</button>
+                    </div>
+                 </div>
+                 <div class="col-12 col-lg-6"></div>
+                   
+                </div>
+             </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    
+  </main>
+
+
+
+
